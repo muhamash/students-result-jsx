@@ -1,10 +1,13 @@
 import './App.css'
+import Header from './components/Header'
 
 function App() {
 
   return (
-    <div className='text-xl text-green-500'>
-      hello
+    <div>
+      <div>
+        <Header/>
+      </div>
     </div>
   )
 }
