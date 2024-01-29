@@ -17,6 +17,7 @@ const StudentsTable = ( { data } ) =>
                     </tr>
                 </thead>
                 <tbody>
+                    {/* map through student classes */}
                     { data.classes.map( ( classes, index ) => (
                         <React.Fragment key={ index }>
                             <tr className="bg-white/5">
@@ -24,6 +25,7 @@ const StudentsTable = ( { data } ) =>
                                     { classes.className }
                                 </td>
                             </tr>
+                            {/* sort based on students grade */}
                             { classes.students.sort( ( a, b ) =>
                             {
                                 const gradeOrder = {
@@ -38,6 +40,8 @@ const StudentsTable = ( { data } ) =>
                                 };
 
                                 return gradeOrder[ a.grade ] - gradeOrder[ b.grade ];
+                                
+                                // map through students data
                             } ).map( ( student ) => (
                                 <tr key={ student.id } className="border-b border-[#7ECEB529]">
                                     <td className="p-5 text-sm md:text-xl">{ student.id }</td>
