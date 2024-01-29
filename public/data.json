@@ -1,0 +1,62 @@
+{
+    "classes": [
+        {
+            "name": "Class JavaScript",
+            "students": [
+                {
+                    "id": 1,
+                    "name": "Alice",
+                    "grade": "A",
+                    "percentage": "92%"
+                },
+                {
+                    "id": 200,
+                    "name": "Bob",
+                    "grade": "B",
+                    "percentage": "85%"
+                },
+                {
+                    "id": 3,
+                    "name": "Charlie",
+                    "grade": "A-",
+                    "percentage": "89%"
+                },
+                {
+                    "id": 300,
+                    "name": "Hockings",
+                    "grade": "A+",
+                    "percentage": "89%"
+                }
+            ]
+        },
+        {
+            "name": "Class Cpp",
+            "students": [
+                {
+                    "id": 1,
+                    "name": "David",
+                    "grade": "C",
+                    "percentage": "78%"
+                },
+                {
+                    "id": 301,
+                    "name": "Hossain",
+                    "grade": "A-",
+                    "percentage": "89%"
+                },
+                {
+                    "id": 20,
+                    "name": "Eva",
+                    "grade": "A+",
+                    "percentage": "95%"
+                },
+                {
+                    "id": 300,
+                    "name": "Frank",
+                    "grade": "A",
+                    "percentage": "82%"
+                }
+            ]
+        }
+    ]
+}
