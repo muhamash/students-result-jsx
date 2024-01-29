@@ -2,6 +2,7 @@ import './App.css'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Search from './components/SearchBox'
+import StudentsTable from './components/StudentsTable'
 
 function App() {
 
@@ -19,6 +20,11 @@ function App() {
             </h2>
             {/* search field */}
             <Search/>
+          </div>
+
+          {/* student section */ }
+          <div className='px-2'>
+              <StudentsTable/>
           </div>
 
           {/* tail / footer */}
