@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Search from './components/SearchBox'
 import StudentsTable from './components/StudentsTable'
+import data from './components/database/data.json'
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 
           {/* student section */ }
           <div className='px-2'>
-              <StudentsTable/>
+            <StudentsTable data={ data }/>
           </div>
 
           {/* tail / footer */}
