@@ -14,17 +14,17 @@ function App() {
 
     // arr.flatMap(callback(currentValue[, index[, array]])[, thisArg]) or reducer ?
     const filteredStudents = data.classes.reduce((acc, classItems)=>{
-      console.log(acc, classItems)
+      // console.log(acc, classItems)
       const filtered = classItems.students.filter((student)=>
         student.id.toString() === lowerCases ||
         student.name.toLowerCase().includes(lowerCases) ||
         student.grade.toLowerCase() === lowerCases ||
         student.percentage === search
       )
-      console.log(filtered, acc.concat(filtered))
+      console.log("filtered Data => ",filtered, "conacting acc value after filtering =>>", acc.concat(filtered))
       return acc.concat(filtered)
     },[]);
-    console.log(filteredStudents);
+    // console.log("final result in reduced",filteredStudents);
     setFilter(filteredStudents);
   }
 
