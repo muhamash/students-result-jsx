@@ -2,7 +2,7 @@ import './App.css'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Search from './components/SearchBox'
-import StudentsTable from './components/StudentsTable'
+import StudentsTable from './components/Table'
 import data from './components/database/data.json'
 import React from 'react';
 
@@ -28,6 +28,8 @@ function App() {
     setFilter(filteredStudents);
   }
 
+  console.log(filter.length? filter : data.classes.reduce((acc, classItems)=> acc.concat(classItems.students),[]))
+
   return (
     <div>
       <div>
@@ -46,9 +48,9 @@ function App() {
 
           {/* student section */ }
           <div className='px-2'>
-            <StudentsTable data={ data }/>
+            {/* <StudentsTable data={ data }/> */}
+            <StudentsTable data={filter.length? filter : data.classes.reduce((acc, classItems)=> acc.concat(classItems.students),[])}/>
           </div>
-
           {/* tail / footer */}
           <div className='pt-10 px-3'>
             <Footer />
