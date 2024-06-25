@@ -4,8 +4,29 @@ import Header from './components/Header'
 import Search from './components/SearchBox'
 import StudentsTable from './components/StudentsTable'
 import data from './components/database/data.json'
+import React from 'react';
 
 function App() {
+  const [filter, setFilter ] = React.useState([]);
+
+  const handleSearch = (search)=>{
+    const lowerCases = search.toLowerCase();
+
+    // arr.flatMap(callback(currentValue[, index[, array]])[, thisArg]) or reducer ?
+    const filteredStudents = data.classes.reduce((acc, classItems)=>{
+      console.log(acc, classItems)
+      const filtered = classItems.students.filter((student)=>
+        student.id.toString() === lowerCases ||
+        student.name.toLowerCase().includes(lowerCases) ||
+        student.grade.toLowerCase() === lowerCases ||
+        student.percentage === search
+      )
+      console.log(filtered, acc.concat(filtered))
+      return acc.concat(filtered)
+    },[]);
+    console.log(filteredStudents);
+    setFilter(filteredStudents);
+  }
 
   return (
     <div>
@@ -20,7 +41,7 @@ function App() {
               <span className="text-[#00CC8C]">Students</span> of the Year
             </h2>
             {/* search field */}
-            <Search/>
+            <Search onSearch={handleSearch}/>
           </div>
 
           {/* student section */ }

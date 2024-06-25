@@ -1,7 +1,13 @@
+import React from 'react';
 
-const Search = () =>
+const Search = ({onSearch}) =>
 {
-    return (
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(e, e.target.value);
+        onSearch(e.target.value)
+    }
+        return (
         <form>
             <div className="flex">
                 <div
@@ -12,6 +18,8 @@ const Search = () =>
                         id="search-dropdown"
                         className="z-20 block w-full bg-white px-4 py-2.5 pr-10 focus:outline-none rounded-[63px] placeholder:text-neutral-400 text-neutral-800"
                         placeholder="Search by Student "
+                        // value={state}
+                        onChange={(e) => handleSubmit(e)}
                         required
                     />
                     <button
